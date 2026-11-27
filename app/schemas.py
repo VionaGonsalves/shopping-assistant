@@ -2,6 +2,7 @@ from pydantic import BaseModel, EmailStr, ConfigDict, Field
 from decimal import Decimal
 from typing import Annotated
 from .models import RolesEnum
+from typing import Literal
 
 Price = Annotated[Decimal, Field(max_digits=12, decimal_places=2, gt=0)]
 
@@ -37,7 +38,6 @@ class ProductRead(BaseModel):
     product_type: str
 
 class CartItemCreate(BaseModel):
-    user_id: int
     product_id: int
     quantity: int = Field(default=1, gt=0)
 
@@ -55,4 +55,12 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
+class ChatMessage(BaseModel):
+    role: Literal["user", "assistant"]
+    content: str
 
+class ChatRequest(BaseModel):
+    message: str = Field(min_length=1)
+
+class ChatResponse(BaseModel):
+    reply: str
