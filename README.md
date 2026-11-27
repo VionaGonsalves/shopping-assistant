@@ -4,6 +4,8 @@ A car shop backend with an AI chat assistant. Customers can ask things like *"Ho
 
 Built with **FastAPI**, **PostgreSQL**, **MCP (Model Context Protocol)** and **Claude**.
 
+**Demo video:** [Watch the demo]: https://drive.google.com/file/d/1GvCv4hs9FmeCsmyGhIFqfMJl73dfSzku/view?usp=sharing
+
 > Proof of concept, built as a learning project for LLM integration and MCP.
 
 ---
